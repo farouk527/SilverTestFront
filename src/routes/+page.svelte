@@ -1,5 +1,5 @@
 <script>
-    import FormLogin from '$lib/LoginForm/LoginForm.svelte'; 
+    import FormLogin from '$lib/components/LoginForm/LoginForm.svelte'; 
     import '../app.css'
 
   </script>
