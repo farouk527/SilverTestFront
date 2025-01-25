@@ -5,4 +5,7 @@ export interface IUser {
   token: string;   
 }
 
-export const user = writable<IUser | null>(null);
+const storedUser = typeof window !== 'undefined' && window.localStorage.getItem('user');
+const initialUser = storedUser ? JSON.parse(storedUser) : null;
+
+export const user = writable<IUser | null>(initialUser); 
