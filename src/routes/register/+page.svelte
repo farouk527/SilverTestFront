@@ -2,7 +2,8 @@
     import RegisterForm from "$lib/components/RegisterForm/RegisterForm.svelte";
     import { register } from "../../services/authService.js";
     import { goto } from '$app/navigation';
-  
+    import "./register.css"
+    
     let errorMessage: string = ''; 
     let showAlert: boolean = false; 
   

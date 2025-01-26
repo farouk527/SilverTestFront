@@ -1,0 +1,32 @@
+.homeMainDiv {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px; 
+    width: 55%;
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+  }
+  
+  .btns {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    display: flex;
+    gap: 10px; 
+  }
+
+  
+.lgbtn{
+    position: absolute;
+    left: 94%;
+    top:1%
+}
+body {
+    background-color: #d4e2f3;
+}
+

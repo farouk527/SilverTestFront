@@ -1,5 +1,5 @@
 body {
-    background-color: #1F2833;
+  background-color: #d4e2f3;
 }
 
 
@@ -13,12 +13,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .text-center {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-  }
+ 
   
   .form-group {
     display: flex;
@@ -26,8 +21,5 @@ body {
     gap: 15px;
   }
   
-  button {
-    margin-top: 10px;
-    border-radius: 8px;
-  }
+  
   
