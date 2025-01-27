@@ -3,10 +3,20 @@
     import { register } from "../../services/authService.js";
     import { goto } from '$app/navigation';
     import "./register.css"
-    
+    import { checkAuth } from '../../utils/auth.ts';
+	import { onMount } from "svelte";
+
+
     let errorMessage: string = ''; 
     let showAlert: boolean = false; 
   
+
+
+    
+    onMount(()=>{
+      checkAuth();
+    })
+
     const handleFormSubmit = async (event: CustomEvent<{ username: string; email: string; password: string }>) => {
       const { username, email, password } = event.detail;
       try {

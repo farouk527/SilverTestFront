@@ -10,8 +10,8 @@ export const GetAllPosts = async (): Promise<void> => {
     try {
         let token: string | undefined;
 
-        user.subscribe(($user) => {
-         token = $user.token; 
+        user.subscribe((user) => {
+         token = user?.token; 
         });
 
         const headers = {
@@ -33,8 +33,8 @@ export const createPost = async (title: string, description: string, category: s
     try {
         let token: string | undefined;
 
-        user.subscribe(($user) => {
-            token = $user.token;
+        user.subscribe((user) => {
+            token = user?.token;
         })();
 
        
@@ -57,8 +57,8 @@ export const DeletePost = async (id: string) : Promise <string> => {
     try {
         let token: string | undefined;
 
-        user.subscribe(($user) => {
-            token = $user.token;
+        user.subscribe((user) => {
+            token = user?.token;
         })();
 
        
@@ -73,3 +73,25 @@ export const DeletePost = async (id: string) : Promise <string> => {
         throw new Error(error.response?.data?.message || "Erreur réseau ou serveur.");
     }   
 }
+
+export const UpdatePost = async (title: string, description: string, category: string, id: string): Promise<IPost | string> => {
+    let token: string | undefined;
+
+    user.subscribe((user) => {
+        token = user?.token;
+    })();
+
+    const postToupdateData = { title, description, category };
+    const headers = {
+        Authorization: `Bearer ${token}`,
+    };
+
+    try {
+        const response = await axios.put<IPost>(`${apiUrl}/post/update/${id}`, postToupdateData, { headers });
+
+        return response.data;
+    } catch (error) {
+        console.error("Error updating post:", error);
+        return "An error occurred while updating the post";
+    }
+};

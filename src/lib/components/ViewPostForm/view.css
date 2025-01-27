@@ -6,8 +6,11 @@
     max-width: 800px; 
   }
   
- 
-  
+  .table-container td.description {
+    max-width: 200px;  
+    word-wrap: break-word;  
+    white-space: normal;  
+  }
  
   
   

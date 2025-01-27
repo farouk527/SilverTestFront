@@ -16,12 +16,8 @@
   });
 
   const handleLogout = (): void => {
-    try {
       logout();
-      goto("/");
-    } catch (error) {
-      console.error("Error during logout:", error);
-    }
+      goto("/");  
   };
 
   const toggleState = (view: boolean, create: boolean): void => {
