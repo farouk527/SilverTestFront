@@ -8,6 +8,7 @@
     let password: string = '';
     let errorMessage: string = ''; 
     let AlertTrue: boolean = false;
+    const apiUrl = import.meta.env.VITE_API_URL; 
 
     const handleLogin = async () => {
         const result = await login(email, password); 
@@ -20,6 +21,7 @@
             email = '';
             password = '';
         }
+        console.log(apiUrl);
     };
 </script>
 
