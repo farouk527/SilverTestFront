@@ -37,9 +37,7 @@ export const createPost = async (title: string, description: string, category: s
             token = $user.token;
         })();
 
-        if (!token) {
-            throw new Error('Token is not available');
-        }
+       
         const headers = {
             Authorization: `Bearer ${token}`,
         };
@@ -53,3 +51,25 @@ export const createPost = async (title: string, description: string, category: s
         throw new Error(error.response?.data?.message || "Erreur réseau ou serveur.");
     }
 };
+
+export const DeletePost = async (id: string) : Promise <string> => {
+
+    try {
+        let token: string | undefined;
+
+        user.subscribe(($user) => {
+            token = $user.token;
+        })();
+
+       
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+        const response = await axios.delete<{ message: string }>(`${apiUrl}/post/delete/${id}`,{ headers });
+        postsStore.deletePost(id);
+        return response.data.message ;
+    }
+    catch{
+        throw new Error(error.response?.data?.message || "Erreur réseau ou serveur.");
+    }   
+}

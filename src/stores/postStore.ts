@@ -30,6 +30,10 @@ const createPostsStore = () => {
         setPosts: (posts: IPost[]) => {
             set(posts);
         },
+        
+        deletePost: (id: string) => {
+            update((posts) => posts.filter((post) => post.id !== id));
+        },
     };
 };
 
