@@ -4,7 +4,7 @@ import type { IPost } from "../stores/postStore.js";
 import { user } from "../stores/userStore.js"; 
 
 
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = 'https://silvertestback.onrender.com/api'; 
 
 export const GetAllPosts = async (): Promise<void> => {
     try {

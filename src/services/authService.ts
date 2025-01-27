@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { user } from '../stores/userStore.js'; 
 
-const apiUrl = import.meta.env.VITE_API_URL; 
+const apiUrl = 'https://silvertestback.onrender.com/api'; 
 
 export const login = async (email: string, password: string): Promise<{ _id: string, token: string } | string> => {
   try {
