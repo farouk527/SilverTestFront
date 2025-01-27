@@ -2,22 +2,19 @@
   import { onMount } from 'svelte';
   import { logout } from "../../services/authService";
   import { goto } from '$app/navigation';
-  import { user } from '../../stores/userStore';
-  import {  Button } from '@sveltestrap/sveltestrap';
+  import { Button } from '@sveltestrap/sveltestrap';
   import "../home/home.css";
   import CreateForm from '$lib/components/CreateForm/CreateForm.svelte';
-	import type { IUser } from '../../stores/userStore.js';
   import { checkAuth } from '../../utils/auth';
-
+  import ViewPostForm from '$lib/components/ViewPostForm/ViewPostForm.svelte';
   
   let isPostView: boolean = false;
   let isPostCreate: boolean = true;
- 
-  onMount(() => {
-    checkAuth()
-    });
 
- 
+  onMount(() => {
+    checkAuth();
+  });
+
   const handleLogout = (): void => {
     try {
       logout();
@@ -31,34 +28,32 @@
     isPostView = view;
     isPostCreate = create;
   };
-
- 
 </script>
 
-<div>
-  <div>
-    <Button class="lgbtn" color="primary" on:click={handleLogout()}>Logout</Button>
-  </div>
+<div class="logout-container">
+  <Button color="primary" on:click={handleLogout}>Logout</Button>
+</div>
 
-  <div class="btns">
+<div>
+  <div class="buttons-container">
     <Button color="primary" outline on:click={() => toggleState(false, !isPostCreate)} disabled={isPostCreate}>
       Add Post
     </Button>
     <Button color="primary" outline on:click={() => toggleState(!isPostView, false)} disabled={isPostView}>
       See Posts
     </Button>
-  </div>
-
-  <div class="homeMainDiv">
+  </div> 
+  
+  <div>
     {#if isPostCreate}
-      <div>
-       <CreateForm/>
+      <div class="form-wrapper">
+        <CreateForm />
       </div>
     {/if}
 
     {#if isPostView}
-      <div>
-        <h2>Viewing Posts</h2>
+      <div class="form-wrapper">
+        <ViewPostForm />
       </div>
     {/if}
   </div>

@@ -18,13 +18,17 @@ export interface IPost {
 }
 
 const createPostsStore = () => {
-    const { subscribe, update } = writable<IPost[]>([]);
+    const { subscribe, set, update } = writable<IPost[]>([]);
 
     return {
         subscribe,
 
         addPost: (post: IPost) => {
             update((posts) => [...posts, post]);
+        },
+
+        setPosts: (posts: IPost[]) => {
+            set(posts);
         },
     };
 };

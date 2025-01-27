@@ -1,32 +1,39 @@
-.homeMainDiv {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border-radius: 8px; 
-    width: 55%;
-    padding: 20px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    text-align: center;
-  }
-  
-  .btns {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10%;
-    display: flex;
-    gap: 10px; 
-  }
+body {
+  background-color: #1F2833;
+}
 
   
-.lgbtn{
-    position: absolute;
-    left: 94%;
-    top:1%
+.form-wrapper {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  width: 60%;
+  height: auto; 
+  border-radius: 2%;
+  margin-top: 2em;
 }
-body {
-    background-color: #d4e2f3;
+.form-wrapper-cr {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px; 
+  width: 80%; 
+  max-width: 800px; 
+  border-radius: 8px; 
+  margin-top: 2em; 
+  font-family: Arial, sans-serif;
+}
+
+
+.buttons-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+}
+.logout-container {
+  padding: 0.5%;
+  margin-left: 94%;
 }
 

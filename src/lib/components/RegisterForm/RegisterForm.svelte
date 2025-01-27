@@ -16,10 +16,11 @@
     };
  </script>
  
- <div class="form-container mx-auto p-4 shadow-lg rounded-lg bg-white" style="max-width: 400px;">
+ <div class="form-container">
      <h3 class="text-center mb-4 text-primary">
          <span class="mr-2">
-            <Icon icon="mdi:lock" />         </span> 
+            <Icon icon="mdi:lock" /> 
+        </span> 
          Register
      </h3>
  
@@ -74,7 +75,7 @@
          {/if}
  
          <div class="text-center mt-3">
-             <p>
+             <p class="p">
                  Already have an account? <a href="/">Login</a>.
              </p>
          </div>

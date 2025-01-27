@@ -24,7 +24,8 @@
 </script>
 
 <div class="form-container">
-    <h3 class="text-center mb-4 text-primary">Login</h3>
+    <h3 class="text-center mb-4 text-primary"> Login  <Icon icon="mdi:lock-open" />
+    </h3>
     <div class="form-group">
         <div>
             <InputGroup class="mb-3">
@@ -44,8 +45,8 @@
 
         <Button color="primary" block on:click={handleLogin}>Login</Button>
 
-        <div class="text-center mt-3">
-            <p>If you don't have an account, <a href="/register">Please Register</a>.</p>
+        <div  class="text-center mt-3">
+            <p class="p">If you don't have an account, <a href="/register">Please Register</a>.</p>
         </div>
 
         {#if AlertTrue}

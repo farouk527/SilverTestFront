@@ -33,9 +33,9 @@
     }
   </script>
   
-  <h2>Create Post</h2>
+  <h2 style="text-align: center;">Create Post</h2>
   <div>
-    <div class="form-group">
+    <div class="form-wrapper-cr">
       <InputGroup class="mb-3">
         <InputGroupText>
           <Icon icon="mdi:text" />
@@ -75,7 +75,7 @@
         />
       </InputGroup>
   
-      <Button color="primary" block on:click={CreatPost}>
+      <Button  color="dark" block on:click={CreatPost}>
         Create
       </Button>
   
