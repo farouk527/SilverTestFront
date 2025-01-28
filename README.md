@@ -1,58 +1,76 @@
-# create-svelte
+# Application Frontend SilverTest
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Ceci est la partie frontend de l'application SilverTest, construite avec Svelte. Elle communique avec un service backend pour la gestion des données et de l'authentification.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Prise en main
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+### Cloner le dépôt
+Clonez le dépôt sur votre machine locale :
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+https://github.com/farouk527/SilverTestFront.git
 ```
 
-## Developing
+### Installer les dépendances
+Accédez au répertoire du projet et installez les packages nécessaires :
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+cd SilverTestFront
+npm install
+```
+
+### Lancer le serveur de développement
+Démarrez le serveur de développement :
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+L'application sera disponible par défaut à l'adresse `http://localhost:5173`.
 
-## Building
+---
 
-To build your library:
+## Intégration avec le backend
 
-```bash
-npm run package
+Le service backend de cette application est hébergé dans un dépôt séparé. Vous pouvez le trouver ici :
+
+[Répertoire Backend SilverTest](https://github.com/farouk527/SilverTestBack.git)
+
+### Utilisation d'un serveur backend local
+Si vous souhaitez utiliser un serveur backend local et une base de données locale, vous devez modifier les fichiers de service dans le répertoire `src/service/` pour utiliser la variable d'environnement suivante :
+
+```javascript
+import.meta.env.VITE_API_URL
 ```
 
-To create a production version of your showcase app:
+Définissez cette variable sur l'URL de votre serveur local :
 
-```bash
-npm run build
+```
+http://localhost:8000/api
 ```
 
-You can preview the production build with `npm run preview`.
+### Application hébergée
+Alternativement, vous pouvez accéder à la version hébergée de l'application directement via le lien suivant :
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+[Frontend SilverTest sur Vercel](https://silver-test-front.vercel.app/)
 
-## Publishing
+---
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+## Remarques
 
-To publish your library to [npm](https://www.npmjs.com):
+1. **Hébergement du backend sur Render :** Le service backend est hébergé sur Render avec un plan gratuit. Cela peut entraîner des délais (jusqu'à 50 secondes ou plus) pour la première requête lors des périodes d'inactivité.
 
-```bash
-npm publish
-```
+2. **Enregistrement/Connexion :** La première requête de type `register` ou `login` peut subir un délai en raison de l'état inactif du backend.
+
+3. **Configuration de l'environnement local :** Assurez-vous que votre serveur backend local est en cours d'exécution avant de tester l'application en local.
+
+---
+
+## Contribution
+Si vous rencontrez des problèmes ou avez des suggestions d'amélioration, n'hésitez pas à ouvrir une issue ou à soumettre une pull request sur le dépôt.
+
+---
+
+## Licence
+Ce projet est sous licence [MIT License](LICENSE).
+
