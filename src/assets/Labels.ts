@@ -1,0 +1,23 @@
+export const  Labels = {
+createPost : "Create Post",
+create : "Create",
+login : "Login",
+ask : "If you don't have an account,",
+pRegister : "Please Register",
+ays:"Are you Sure",
+confirmMsg : "If you Want Delete just click on confirm else cancel",
+confirm:"Confrim",
+cancel :"Cancel",
+register:"Register",
+existAccount:"Already have an account?",
+updatePost : "Update your Post",
+title: "Title",
+description : "Description",
+category : "Category",
+update : "Update",
+addedBy : "Added By",
+viewingPosts : "Viewing Posts",
+addPosts : "Add Post",
+seePosts :"See Posts",
+logout:"Logout"
+}

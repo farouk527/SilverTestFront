@@ -14,6 +14,20 @@ body {
   border-radius: 2%;
   margin-top: 2em;
 }
+@media (max-width: 768px) {
+  .form-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-wrapper {
+    width: 100%;
+    padding: 10px; /* Réduction du padding pour les petits écrans */
+  }
+}
+
+
 .form-wrapper-cr {
   margin-left: auto;
   margin-right: auto;

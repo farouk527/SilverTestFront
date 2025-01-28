@@ -7,6 +7,7 @@
   import CreateForm from '$lib/components/CreateForm/CreateForm.svelte';
   import { checkAuth } from '../../utils/auth';
   import ViewPostForm from '$lib/components/ViewPostForm/ViewPostForm.svelte';
+	import { Labels } from '../../assets/Labels.js';
   
   let isPostView: boolean = false;
   let isPostCreate: boolean = true;
@@ -14,10 +15,10 @@
   onMount(() => {
     checkAuth();
   });
-
+  //logout
   const handleLogout = (): void => {
+    goto("/");  
       logout();
-      goto("/");  
   };
 
   const toggleState = (view: boolean, create: boolean): void => {
@@ -26,17 +27,18 @@
   };
 </script>
 
+<!-- Render The main container and call other components-->
 <div class="logout-container">
-  <Button color="primary" on:click={handleLogout}>Logout</Button>
+  <Button color="primary" on:click={handleLogout}>{Labels.logout}</Button>
 </div>
 
 <div>
   <div class="buttons-container">
     <Button color="primary" outline on:click={() => toggleState(false, !isPostCreate)} disabled={isPostCreate}>
-      Add Post
-    </Button>
+{Labels.addPosts}  
+  </Button>
     <Button color="primary" outline on:click={() => toggleState(!isPostView, false)} disabled={isPostView}>
-      See Posts
+      {Labels.seePosts}
     </Button>
   </div> 
   

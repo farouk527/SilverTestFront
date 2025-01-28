@@ -5,7 +5,9 @@ import { user } from "../stores/userStore.js";
 
 
 const apiUrl = 'https://silvertestback.onrender.com/api'; 
+//if you want to communicate with local back server u need just to change the apiUrl by const apiUrl = import.meta.env.VITE_API_URL;
 
+// Get all posts service from data base with axios
 export const GetAllPosts = async (): Promise<void> => {
     try {
         let token: string | undefined;
@@ -28,7 +30,7 @@ export const GetAllPosts = async (): Promise<void> => {
     }
 };
 
-
+// create Post service using axios 
 export const createPost = async (title: string, description: string, category: string): Promise<IPost | string> => {
     try {
         let token: string | undefined;
@@ -52,6 +54,7 @@ export const createPost = async (title: string, description: string, category: s
     }
 };
 
+// Delete Post By id service using axios 
 export const DeletePost = async (id: string) : Promise <string> => {
 
     try {
@@ -73,6 +76,8 @@ export const DeletePost = async (id: string) : Promise <string> => {
         throw new Error(error.response?.data?.message || "Erreur réseau ou serveur.");
     }   
 }
+
+// update Post by id service using axios 
 
 export const UpdatePost = async (title: string, description: string, category: string, id: string): Promise<IPost | string> => {
     let token: string | undefined;

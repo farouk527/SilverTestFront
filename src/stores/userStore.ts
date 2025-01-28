@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+// the store to manage user state and value
 
 export interface IUser {
   _id: string;     

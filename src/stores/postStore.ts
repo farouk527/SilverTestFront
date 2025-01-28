@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-
+// the store to manage posts states and values
 export interface IPost {
     _id: string;
     title: string;

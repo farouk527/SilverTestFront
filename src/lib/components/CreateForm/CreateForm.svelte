@@ -2,10 +2,9 @@
     import { Alert, Button, Input, InputGroup, InputGroupText } from '@sveltestrap/sveltestrap';
     import Icon from "@iconify/svelte";
     import { createPost } from '../../../services/postServices.js';
-	import { onMount } from 'svelte';
-
+    import { Labels } from '../../../assets/Labels.js';
     
-
+  // using non reactive variable without using state variables
     let title : string = '';
     let description : string = '';
     let category : string = '';
@@ -15,7 +14,7 @@
     let showSuccessAlert: boolean = false; 
 
     
-  
+  //call the create Post service from Posts service
     const CreatPost = async () => {
       try {
         const result = await createPost(title, description, category);
@@ -33,7 +32,9 @@
     }
   </script>
   
-  <h2 style="text-align: center;">Create Post</h2>
+      <!--Rendering the creation Form --> 
+
+  <h2 style="text-align: center;">{Labels.createPost}</h2>
   <div>
     <div class="form-wrapper-cr">
       <InputGroup class="mb-3">
@@ -76,15 +77,18 @@
       </InputGroup>
   
       <Button  color="dark" block on:click={CreatPost}>
-        Create
+        {Labels.create}
       </Button>
   
+          <!--Error Alert--> 
+
       {#if showAlert}
         <Alert color="danger" class="mt-3">
           {errorMessage}
         </Alert>
       {/if}
-  
+            <!--Success Alert--> 
+
       {#if showSuccessAlert}
         <Alert color="success" class="mt-3">
           {successMessage}

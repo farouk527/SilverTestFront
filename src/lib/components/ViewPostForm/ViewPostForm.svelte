@@ -9,11 +9,11 @@
   import Icon from "@iconify/svelte";
   import ConfirmationModal from "../Modal/ConfirmationModal.svelte";
 	import UpadatePost from "../UpdatePostOffcanvas/UpadatePost.svelte";
+	import { Labels } from "../../../assets/Labels.js";
   
-
+  //declaring the main interactive variables to manage interfaces 
   let open: boolean = false;
   let openUpd: boolean = false;
-
   let idPost: string = "";
   let idPostUpd : string = "";
   let isUserAuthorized: string ="";
@@ -35,9 +35,9 @@ if (id) {
 }
   
 };
-
+  //get Data From the posts store for better state mangament
   const posts = derived(postsStore, ($postsStore) => $postsStore || []);
-
+  // fetch all needed data
   onMount(async () => {
     try {
       await GetAllPosts();
@@ -46,7 +46,7 @@ if (id) {
       console.error("Error fetching posts:", error);
     }
   });
-
+// call the delete post  service  from post service
   const deletePost = async (id: string) => {
     try {
       await DeletePost(id);
@@ -58,15 +58,17 @@ if (id) {
   };
 </script>
 
+
+  <!-- Render the layout and calling other components-->
 <div class="table-container">
-  <h2>Viewing Posts</h2>
+  <h2>{Labels.viewingPosts}</h2>
   <Table hover>
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Added By</th>
+        <th>{Labels.title}</th>
+        <th>{Labels.description}</th>
+        <th>{Labels.category}</th>
+        <th>{Labels.addedBy}</th>
         <th></th>
         <th></th>
       </tr>

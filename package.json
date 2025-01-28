@@ -55,6 +55,7 @@
 		"@material/theme": "^14.0.0",
 		"@sveltestrap/sveltestrap": "^7.0.3",
 		"axios": "^1.7.9",
+		"dotenv": "^16.4.7",
 		"svelte-routing": "^2.13.0"
 	}
 }

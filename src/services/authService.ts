@@ -2,7 +2,9 @@ import axios from 'axios';
 import { user } from '../stores/userStore.js'; 
 
 const apiUrl = 'https://silvertestback.onrender.com/api'; 
+//if you want to communicate with local back server u need just to change the apiUrl by const apiUrl = import.meta.env.VITE_API_URL;
 
+//calling the back server login with axios 
 export const login = async (email: string, password: string): Promise<{ _id: string, token: string } | string> => {
   try {
     const response = await axios.post(`${apiUrl}/auth/login`, { email, password });
@@ -22,6 +24,8 @@ export  interface message{
   message: string;
 }
 
+
+//call the register service with axios
 export const register = async (
   username: string,
   email: string,
